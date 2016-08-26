@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=a\ b
+comment0.target=SimpleCalc(int,\ int)
+comment1.params=
+comment1.target=int\ add()
+comment2.params=
+comment2.target=int\ subtract()
+comment3.params=
+comment3.target=int\ mult()
+comment4.params=
+comment4.target=int\ div()
+comment5.params=
+comment5.target=boolean\ isGreater()
+numComments=6
