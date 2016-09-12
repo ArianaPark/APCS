@@ -13,16 +13,14 @@ public class BallRunner{
     }
 
     //helper method
-    public int findFreeBallBotIndex(){
+    public int findFreeBallBotIndex(){//problem
         int returnValue = -1;
         for(int i = 0; i < ballBotArray.length; i++) {
             if(ballBotArray[i] == null)
-                returnValue = i;
+                return i;
         }
         if(returnValue == -1)
             return ballBotArray.length;
-        else
-            return returnValue;
     }
 
     //new run method
@@ -32,11 +30,10 @@ public class BallRunner{
         TGPoint tgp = new TGPoint(0,0);
         int arrayLength = 10;
         BallRunner ballBotRunner = new BallRunner(ballWorld, tgp, arrayLength);
-        boolean a = true;
-        while(a == true){
-            int freeBallBotIndex = findFreeBallBotIndex();
+        while(true){
+            int freeBallBotIndex = ballBotArray.findFreeBallBotIndex();//problem withindex
             if(freeBallBotIndex < ballBotArray.length){
-                //
+                BallBot ballBot = new BallBot(ballWorld, entrancePoint, (int)(Math.random()*360), 20);
             }
         }
 
