@@ -1,19 +1,19 @@
 #BlueJ package file
 objectbench.height=76
 objectbench.width=486
-package.editor.height=362
+package.editor.height=354
 package.editor.width=388
-package.editor.x=432
-package.editor.y=256
+package.editor.x=1251
+package.editor.y=270
 package.numDependencies=0
 package.numTargets=1
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
-target1.editor.height=747
-target1.editor.width=833
-target1.editor.x=102
-target1.editor.y=303
+target1.editor.height=1056
+target1.editor.width=1936
+target1.editor.x=-8
+target1.editor.y=-8
 target1.height=50
 target1.name=BallRunner
 target1.naviview.expanded=false
