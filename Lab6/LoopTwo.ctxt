@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=LoopTwo(int)
+comment1.params=
+comment1.target=void\ loadRandom()
+comment2.params=
+comment2.target=void\ printArray()
+comment3.params=
+comment3.target=void\ sortArray()
+comment4.params=
+comment4.target=double\ findAverage()
+numComments=5
