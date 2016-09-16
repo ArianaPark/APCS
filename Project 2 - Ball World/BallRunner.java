@@ -12,27 +12,39 @@ public class BallRunner{
         ballBotArray = new BallBot[ballBotArrayLength];   
     }
 
-    //helper method
-    public  int findFreeBallBotIndex(){
+    //helper methods
+    public  int findFreeBallBotIndex(){//problem was in here DONT TOUCH
         int returnValue = ballBotArray.length;
         for(int i = 0; i < ballBotArray.length; i++) {
-            if(ballBotArray[i] == null)
-                return i;//problem here?
-            else{
-                return ballBotArray.length;
+            if(ballBotArray[i] == null){
+                returnValue = i;
             }
         }
         return returnValue;
     }
     
+    public double distanceBetweenPoints(TGPoint p1, TGPoint p2){
+        double argument = Math.pow((p1.x - p2.x),2) + Math.pow((p1.y - p2.y),2);
+        double dbp = Math.sqrt(argument);
+        return dbp;
+    }
+    
+    public boolean entranceClear(){
+        for(int i = 0; i < ballBotArray.length; i++){
+            if(ballBotArray[i] != null){
+                double distance = distanceBetweenPoints(entrancePoint, ballBot.getPoint());
+                //if ballbot less than 2x radius, return false-make if/else statement
+            }
+        }
+    }
+    
+    //ballbot method
     public void makeBallBots(){
         BallBot ballBot;
         while(true){
             int freeBallBotIndex = findFreeBallBotIndex();
-            System.out.print(freeBallBotIndex);
-            System.out.print((freeBallBotIndex < ballBotArray.length));
             if(freeBallBotIndex < ballBotArray.length){
-                ballBot = new BallBot(ballWorld,entrancePoint, (int)(Math.random()*360), 20);
+                ballBot = new BallBot(ballWorld, entrancePoint, (int)(Math.random()*360), 20);
                 ballBotArray[freeBallBotIndex] = ballBot;
             }
 
@@ -42,7 +54,6 @@ public class BallRunner{
                         ballBotArray[index].moveForward();
                     }
                     else{
-                        double currentHeading = ballBotArray[index].getHeading();
                         ballBotArray[index].setHeading(Math.random()*360);
                     }
                 }
@@ -57,7 +68,6 @@ public class BallRunner{
         TGPoint tgp = new TGPoint(0,0);
         int arrayLength = 10;
         BallRunner ballBotRunner = new BallRunner(ballWorld, tgp, arrayLength);
-        
         ballBotRunner.makeBallBots();
     }
 }
