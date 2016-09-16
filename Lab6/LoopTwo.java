@@ -46,10 +46,31 @@ public class LoopTwo{
     }
     
     public double getMedian(){
-        //
+        sortArray();
+        int index1 = list.length/2;
+        int index2;
+        if(list.length%2 == 0){
+            index2 = list.length/2 - 1;
+            return (list[index1] + list[index2]) / 2;
+        }else{
+            return list[index1];
+        }
     }
     
     public int getMode(){
-        //
+        int commonNum = -1;
+        int counter1 = 0;
+        for(int i = 0; i < list.length; i++){
+            int counter2 = 0;
+            for(int x = 0; x < list.length; x++){
+                if(list[x] == list[i]){
+                    counter2++;
+                }
+            }
+            if(counter1 < counter2){//if number before less common than latest number
+                commonNum = counter2;
+            }
+        }
+        return commonNum;
     }
 }

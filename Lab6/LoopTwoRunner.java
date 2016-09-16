@@ -10,8 +10,8 @@ public class LoopTwoRunner
         loop2.printArray();
         loop2.sortArray();
         loop2.printArray();
-        System.out.print("Mean: " + loop2.findAverage());
-        System.out.print("Median: " + loop2.getMedian());
-        System.out.print("Mode: " + loop2.getMode());
+        System.out.println("Mean: " + loop2.findAverage());
+        System.out.println("Median: " + loop2.getMedian());
+        System.out.println("Mode: " + loop2.getMode());
     }
 }
