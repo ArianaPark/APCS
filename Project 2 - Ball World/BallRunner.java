@@ -1,9 +1,9 @@
 
 //Ariana Park
 public class BallRunner{
-    private  BallWorld ballWorld; 
-    private  TGPoint entrancePoint;
-    private  BallBot[] ballBotArray;
+    private BallWorld ballWorld; 
+    private TGPoint entrancePoint;
+    private BallBot[] ballBotArray;
 
     //constructors
     public BallRunner(BallWorld ballWorld, TGPoint entrancePoint, int ballBotArrayLength) {
@@ -12,7 +12,7 @@ public class BallRunner{
         ballBotArray = new BallBot[ballBotArrayLength];   
     }
 
-    //helper methods
+    //methods
     public  int findFreeBallBotIndex(){//problem was in here DONT TOUCH
         int returnValue = ballBotArray.length;
         for(int i = 0; i < ballBotArray.length; i++) {
@@ -22,30 +22,53 @@ public class BallRunner{
         }
         return returnValue;
     }
-    
-    public double distanceBetweenPoints(TGPoint p1, TGPoint p2){
+
+    public double distanceBetweenPoints(TGPoint p1, TGPoint p2){//activity 3
         double argument = Math.pow((p1.x - p2.x),2) + Math.pow((p1.y - p2.y),2);
         double dbp = Math.sqrt(argument);
         return dbp;
     }
-    
-    public boolean entranceClear(){
+
+    public boolean entranceClear(){//activity 3
         for(int i = 0; i < ballBotArray.length; i++){
             if(ballBotArray[i] != null){
-                double distance = distanceBetweenPoints(entrancePoint, ballBot.getPoint());
-                //if ballbot less than 2x radius, return false-make if/else statement
+                double distance = distanceBetweenPoints(entrancePoint, ballBotArray[i].getPoint());
+                if(ballBotArray[i].getRadius()*2 > distance){
+                    return false;
+                }
             }
         }
+        return true;
+    }
+
+    public BallBot ballBotToBounceOff(BallBot ballBot){//activity 4
+        TGPoint point = ballBot.getPoint();
+        TGPoint nextPoint = ballBot.forwardPoint();
+        BallBot otherBallBot = ballBot; //parameter ->otherBallBot
+        for(int i = 0; i < ballBotArray.length; i++){
+            if(otherBallBot != null && otherBallBot != ballBotArray[i]){//make sure not null and not same ballBot
+                double currentDistance = distanceBetweenPoints(otherBallBot.getPoint(), ballBotArray[i].getPoint());//distance btwn bots
+                if(currentDistance <= (otherBallBot.getRadius() + ballBotArray[i].getRadius())){ //check if touching
+                    double nextDistance = distanceBetweenPoints(nextPoint, otherBallBot.getPoint());
+                    if(nextDistance <= currentDistance){//check if will get closer when they move
+                        return otherBallBot;
+                    }
+                }
+            }
+        }
+        return null;
     }
     
     //ballbot method
     public void makeBallBots(){
         BallBot ballBot;
         while(true){
-            int freeBallBotIndex = findFreeBallBotIndex();
-            if(freeBallBotIndex < ballBotArray.length){
-                ballBot = new BallBot(ballWorld, entrancePoint, (int)(Math.random()*360), 20);
-                ballBotArray[freeBallBotIndex] = ballBot;
+            if(entranceClear()){
+                int freeBallBotIndex = findFreeBallBotIndex();
+                if(freeBallBotIndex < ballBotArray.length){//creates ballbot
+                    ballBot = new BallBot(ballWorld, entrancePoint, (int)(Math.random()*360), 20);
+                    ballBotArray[freeBallBotIndex] = ballBot;
+                }
             }
 
             for(int index = 0; index < ballBotArray.length; index++){
