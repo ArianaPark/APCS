@@ -46,10 +46,10 @@ public class BallRunner{
         TGPoint nextPoint = ballBot.forwardPoint();
         BallBot otherBallBot = ballBot; //parameter ->otherBallBot
         for(int i = 0; i < ballBotArray.length; i++){
-            if(otherBallBot != null && otherBallBot != ballBotArray[i]){//make sure not null and not same ballBot
+            if(otherBallBot != null && ballBotArray[i] != null && otherBallBot != ballBotArray[i]){//make sure bots not null and not same ballBot
                 double currentDistance = distanceBetweenPoints(otherBallBot.getPoint(), ballBotArray[i].getPoint());//distance btwn bots
                 if(currentDistance <= (otherBallBot.getRadius() + ballBotArray[i].getRadius())){ //check if touching
-                    double nextDistance = distanceBetweenPoints(nextPoint, otherBallBot.getPoint());
+                    double nextDistance = distanceBetweenPoints(nextPoint, ballBotArray[i].getPoint());
                     if(nextDistance <= currentDistance){//check if will get closer when they move
                         return otherBallBot;
                     }
@@ -73,7 +73,7 @@ public class BallRunner{
 
             for(int index = 0; index < ballBotArray.length; index++){
                 if(ballBotArray[index] != null && index < ballBotArray.length){//should stop from being null and should be in range/bounds
-                    if(ballBotArray[index].canMoveForward(ballWorld)){//object is required, should be ballBot
+                    if(ballBotArray[index].canMoveForward(ballWorld) && ballBotToBounceOff(ballBotArray[index]) == null){//object is required, should be ballBot
                         ballBotArray[index].moveForward();
                     }
                     else{
