@@ -75,7 +75,8 @@ public class BallRunner{
 
             for(int index = 0; index < ballBotArray.length; index++){
                 if(ballBotArray[index] != null && index < ballBotArray.length){//should stop from being null and should be in range/bounds
-                    if(ballBotArray[index].canMoveForward(ballWorld) && ballBotToBounceOff(ballBotArray[index]) == null){//object is required, should be ballBot
+                    if(ballBotArray[index].canMoveForward(ballWorld) && ballBotToBounceOff(ballBotArray[index]) == null){
+                        //^^^checks ballbot can more forward and won't hit another ballbot/Activity 4
                         ballBotArray[index].moveForward();
                     }
                     else{
