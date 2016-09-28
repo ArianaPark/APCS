@@ -9,7 +9,11 @@ public class StatLabRunner{
         StatLab sl = new StatLab(matrix);
         sl.loadArray2D();
         sl.printArray2D();
-        //System.out.println(sl.sortArray2D());
+        int[] newArray = sl.sortArray2D();
+        for(int i=0; i<newArray.length; i++){
+            System.out.print(newArray[i] + "\t");
+        }
+        System.out.println();
         System.out.println(sl.getMean2D());
     }
 }

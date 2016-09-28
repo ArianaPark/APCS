@@ -28,19 +28,18 @@ public class StatLab{
         }
     }
     
-    /**
     public int[] sortArray2D(){
         // 1- make it 1d array
         // 2- sort
         int[] list = new int[mat.length*mat[0].length];
         for(int i=0; i<mat.length; i++){
             for(int j=0; j<mat[i].length; j++){
-                list[i+j] = mat[i][j];
+                list[i*mat.length+j] = mat[i][j];
             }
         }
-        return list.Array.sort();//fix
+        Arrays.sort(list);
+        return list;
     }
-    */
     
     public int getMean2D(){
         int sum = 0;
@@ -49,6 +48,6 @@ public class StatLab{
                 sum += mat[i][j];
             }
         }
-        return sum;
+        return sum/(mat.length*mat[0].length);
     }
 }

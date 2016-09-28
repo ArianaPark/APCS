@@ -6,6 +6,7 @@ comment1.target=void\ loadArray2D()
 comment2.params=
 comment2.target=void\ printArray2D()
 comment3.params=
-comment3.target=int\ getMean2D()
-comment3.text=\r\n\ \ \ \ public\ int[]\ sortArray2D(){\r\n\ \ \ \ \ \ \ \ //\ 1-\ make\ it\ 1d\ array\r\n\ \ \ \ \ \ \ \ //\ 2-\ sort\r\n\ \ \ \ \ \ \ \ int[]\ list\ \=\ new\ int[mat.length*mat[0].length];\r\n\ \ \ \ \ \ \ \ for(int\ i\=0;\ i<mat.length;\ i++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ for(int\ j\=0;\ j<mat[i].length;\ j++){\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ list[i+j]\ \=\ mat[i][j];\r\n\ \ \ \ \ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ return\ list.Array.sort();//fix\r\n\ \ \ \ }\r\n
-numComments=4
+comment3.target=int[]\ sortArray2D()
+comment4.params=
+comment4.target=int\ getMean2D()
+numComments=5
