@@ -13,7 +13,7 @@ public class BallRunner{
     }
 
     //methods
-    public  int findFreeBallBotIndex(){//problem was in here DONT TOUCH
+    public  int findFreeBallBotIndex(){
         int returnValue = ballBotArray.length;
         for(int i = 0; i < ballBotArray.length; i++) {
             if(ballBotArray[i] == null){
@@ -66,7 +66,9 @@ public class BallRunner{
             if(entranceClear()){
                 int freeBallBotIndex = findFreeBallBotIndex();
                 if(freeBallBotIndex < ballBotArray.length){//creates ballbot
-                    ballBot = new BallBot(ballWorld, entrancePoint, (int)(Math.random()*360), 20);
+                    ballBot = new BallBot(ballWorld, entrancePoint, (int)(Math.random()*360), (int)(Math.random()*50)+1);
+                    ballBot.setColor((int)(Math.random()*32));
+                    ballBot.setPixelsPerSecond((int)(Math.random()*200)+5);
                     ballBotArray[freeBallBotIndex] = ballBot;
                 }
             }
