@@ -124,7 +124,7 @@ public class Picture extends SimplePicture
         {
             for (int j = 0; j < pixels[i].length; j++)
             {
-                pixels[i][j].setGreen(255);
+                pixels[i][j].setGreen(0);
             }
         }
     }
@@ -136,7 +136,7 @@ public class Picture extends SimplePicture
     {
 
     }
-    
+
     public void keepOnlyBlue(){
         Pixel[][] pixels = this.getPixels2D();
         for(int i=0; i<pixels.length; i++){
@@ -146,7 +146,7 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     public void keepOnlyGreen(){
         Pixel[][] pixels = this.getPixels2D();
         for(int i=0; i<pixels.length; i++){
@@ -156,13 +156,55 @@ public class Picture extends SimplePicture
             }
         }
     }
-    
+
     public void keepOnlyRed(){
         Pixel[][] pixels = this.getPixels2D();
         for(int i=0; i<pixels.length; i++){
             for(int j=0; j<pixels[i].length; j++){
                 pixels[i][j].setGreen(0);
                 pixels[i][j].setBlue(0);
+            }
+        }
+    }
+
+    public void negate(){
+        Pixel[][] pixels = this.getPixels2D();
+        int green = -1;
+        int red = -1;
+        int blue = -1;
+        for(int i=0; i<pixels.length; i++){
+            for(int j=0; j<pixels[i].length; j++){
+                green = 255 -  pixels[i][j].getGreen();
+                red = 255 - pixels[i][j].getRed();
+                blue = 255 - pixels[i][j].getBlue();
+                pixels[i][j].setGreen(green);
+                pixels[i][j].setRed(red);
+                pixels[i][j].setBlue(blue);
+            }
+        }
+    }
+
+    public void grayscale(){
+        Pixel[][] pixels = this.getPixels2D();
+        int sum = 0;
+        int average = 0;
+        for(int i=0; i<pixels.length; i++){
+            for(int j=0; j<pixels[i].length; j++){
+                sum = pixels[i][j].getRed() + pixels[i][j].getGreen() + pixels[i][j].getBlue();
+                average = sum/3;
+                pixels[i][j].setRed(average);
+                pixels[i][j].setGreen(average);
+                pixels[i][j].setBlue(average);
+            }
+        }
+    }
+
+    public void fixUnderwater(){
+        Pixel[][] pixels = this.getPixels2D();
+        for(int i=0; i<pixels.length; i++){
+            for(int j=0; j<pixels[i].length; j++){
+                pixels[i][j].setRed(pixels[i][j].getBlue()-40);
+                //make fish brighter
             }
         }
     }
