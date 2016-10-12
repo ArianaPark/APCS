@@ -78,13 +78,37 @@ public class PictureTester
         dt.explore();
     }
 
-    /** Method to test mirrorVertical */
+    /** Method to test mirrorVertical, left to right */
     public static void testMirrorVertical()
     {
         Picture caterpillar = new Picture("caterpillar.jpg");
         caterpillar.explore();
         caterpillar.mirrorVertical();
         caterpillar.explore();
+    }
+    
+    //right to left
+    public static void testMirrorVertical2(){
+        Picture moon = new Picture("moon-surface.jpg");
+        moon.explore();
+        moon.mirrorVertical2();
+        moon.explore();
+    }
+    
+    //top to bottom
+    public static void testMirrorHorizontal(){
+        Picture cookie = new Picture("smallCookie.jpg");
+        cookie.explore();
+        cookie.mirrorHorizontal();
+        cookie.explore();
+    }
+    
+    //bottom to top
+    public static void testMirrorHorizontal2(){
+        Picture cookie = new Picture("smallCookie.jpg");
+        cookie.explore();
+        cookie.mirrorHorizontal2();
+        cookie.explore();
     }
 
     /** Method to test mirrorTemple */
@@ -127,8 +151,11 @@ public class PictureTester
         //testKeepOnlyGreen();
         //testNegate();
         //testGrayscale();
-        testFixUnderwater();
+        //testFixUnderwater();
         //testMirrorVertical();
+        //testMirrorVertical2();
+        //testMirrorHorizontal();
+        //testMirrorHorizontal2();
         //testMirrorTemple();
         //testMirrorArms();
         //testMirrorGull();

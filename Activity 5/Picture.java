@@ -134,7 +134,62 @@ public class Picture extends SimplePicture
      * from left to right */
     public void mirrorVertical()
     {
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel left = null;
+        Pixel right = null;
+        int width = pixels[0].length;
+        for(int i=0; i<pixels.length; i++){
+            for(int j=0; j<width/2; j++){
+                left = pixels[i][j];
+                right = pixels[i][width -1 -j];
+                right.setColor(left.getColor());
+            }
+        }
+    }
 
+    //right to left
+    public void mirrorVertical2(){
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel left = null;
+        Pixel right = null;
+        int width = pixels[0].length;
+        for(int i=0; i<pixels.length; i++){
+            for(int j=0; j<width/2; j++){
+                left = pixels[i][j];
+                right = pixels[i][width -1 -j];
+                left.setColor(right.getColor());
+            }
+        }
+    }
+
+    //top to bottom
+    public void mirrorHorizontal(){
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel top = null;
+        Pixel bottom = null;
+        int height = pixels.length;
+        for(int i=0; i<height/2; i++){
+            for(int j=0; j<pixels[0].length; j++){
+                top = pixels[i][j];
+                bottom = pixels[height -1 -i][j];
+                bottom.setColor(top.getColor());
+            }
+        }
+    }
+
+    //bottom to top
+    public void mirrorHorizontal2(){
+        Pixel[][] pixels = this.getPixels2D();
+        Pixel top = null;
+        Pixel bottom = null;
+        int height = pixels.length;
+        for(int i=0; i<height/2; i++){
+            for(int j=0; j<pixels[0].length; j++){
+                top = pixels[i][j];
+                bottom = pixels[height -1 -i][j];
+                top.setColor(bottom.getColor());
+            }
+        }
     }
 
     public void keepOnlyBlue(){
@@ -203,11 +258,13 @@ public class Picture extends SimplePicture
         Pixel[][] pixels = this.getPixels2D();
         for(int i=0; i<pixels.length; i++){
             for(int j=0; j<pixels[i].length; j++){
-                pixels[i][j].setRed(pixels[i][j].getBlue()-40);
-                //make fish brighter
+                pixels[i][j].setRed(pixels[i][j].getRed() + 60);
+                pixels[i][j].setGreen(pixels[i][j].getGreen() - 60);
+                pixels[i][j].setBlue(pixels[i][j].getBlue() - 60);
             }
         }
     }
+
 
     /** Mirror just part of a picture of a temple */
     public void mirrorTemple()
