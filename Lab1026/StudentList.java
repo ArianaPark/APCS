@@ -9,7 +9,7 @@ public class StudentList
 {
     private Student[] students;
     
-    public StudentList(Student[] stus){
-        students = stus;
+    public StudentList(){
+        students = new Student[3];
     }
 }
