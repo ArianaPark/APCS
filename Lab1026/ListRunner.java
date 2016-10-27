@@ -14,19 +14,20 @@ public class ListRunner
     public static void main(String[] args){
         StudentList sl = new StudentList();
         Scanner input = new Scanner(System.in);
-        String ans;
+        String ansStr;
+        int ansInt;
+        double ansDub;
         while(true){
             System.out.println("What would you like to do?");
             System.out.println("-Add Student to List (1)");
-            ans = input.next();
-            if(ans.equals("1")){
+            ansStr = input.next();
+            if(ansStr.equals("1")){
                 System.out.println("What is the student's ID?");
-                //ans = input.nextInt();
-                //VV fix
+                ansInt = input.nextInt();
                 System.out.println("What is the student's GPA?");
-                Scanner gpa = new Scanner(System.in);
+                ansDub = input.nextDouble();
                 System.out.println("What is the student's name?");
-                Scanner name = new Scanner(System.in);
+                ansStr = input.next();
             }
         }
     }
