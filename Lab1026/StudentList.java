@@ -1,15 +1,14 @@
 
 /**
- * Write a description of class StudentList here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ *Ariana Park
  */
 public class StudentList
 {
     private Student[] students;
     
-    public StudentList(){
-        students = new Student[3];
+    public StudentList(int n){
+        students = new Student[n];
     }
+    
+    
 }

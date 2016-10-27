@@ -1,4 +1,4 @@
 #BlueJ class context
-comment0.params=
-comment0.target=StudentList()
+comment0.params=n
+comment0.target=StudentList(int)
 numComments=1
