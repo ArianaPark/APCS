@@ -1,6 +1,7 @@
 
 /**
  *Ariana Park
+ *10/28/16
  */
 public class Student
 {
