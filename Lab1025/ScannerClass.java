@@ -1,12 +1,11 @@
 /**
  * Ariana Park
+ * 10/28/16
  */
 import java.util.Scanner;
 public class ScannerClass
 {
-    //no fields
     
-    //constructor
     public ScannerClass(){
     }
     
@@ -24,16 +23,15 @@ public class ScannerClass
     public static void partTwo(){
         Scanner input = new Scanner(System.in);
         System.out.println("Please input something or \"quit\". ");
-        String ans = input.next();
-        String contain = ans;
+        String ans = input.nextLine();
         while(!ans.equals("quit")){
-            if(contain.contains("awesome")){
+            if(ans.indexOf("awesome") != -1){                 
                 System.out.println("This is an awesome string: " + ans.indexOf("awesome"));
             }else{
                 System.out.println("This is not an awesome string.");
             }
             System.out.println("\nPlease input something or \"quit\". ");
-            ans = input.next();
+            ans = input.nextLine();
         }
     }
     
