@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=StudentList(int)
+comment1.params=stu
+comment1.target=void\ addStudent(Student)
+comment2.params=
+comment2.target=void\ printStuList()
+comment3.params=str
+comment3.target=void\ deleteStudent(java.lang.String)
+comment4.params=
+comment4.target=Student[]\ getSL()
+numComments=5
