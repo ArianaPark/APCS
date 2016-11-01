@@ -41,9 +41,10 @@ public class StudentList
 
     public void deleteStudent(String str){
         int index = -1;
-        for(int i=0; i<students.length;i++){
+        for(int i=0; i<students.length;i++){//never getting in here
             if(students[i]!=null && students[i].getName() == str){
-                index = 1;
+                index = i;
+                System.out.println("change index to i");
             } 
         }
         if(index!=-1){
