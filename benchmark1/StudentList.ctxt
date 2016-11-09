@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.params=n
+comment0.target=StudentList(int)
+comment1.params=stu
+comment1.target=void\ addStudent(Student)
+comment10.params=
+comment10.target=void\ clearList()
+comment11.params=
+comment11.target=java.util.ArrayList\ getSL()
+comment2.params=
+comment2.target=void\ printStuList()
+comment3.params=str
+comment3.target=void\ printStudent(java.lang.String)
+comment4.params=stu\ str
+comment4.target=void\ editStuFirst(java.lang.String,\ java.lang.String)
+comment5.params=stu\ str
+comment5.target=void\ editStuMiddle(java.lang.String,\ java.lang.String)
+comment6.params=stu\ str
+comment6.target=void\ editStuLast(java.lang.String,\ java.lang.String)
+comment7.params=stu\ str
+comment7.target=void\ editStuID(int,\ int)
+comment8.params=stu\ str
+comment8.target=void\ editStuGPA(double,\ double)
+comment9.params=str
+comment9.target=void\ deleteStudent(java.lang.String)
+numComments=12
