@@ -22,7 +22,6 @@ public class Student
         first = "";
         middle = "";
         last = "";
-        //parseName(name,);
     }
     
     //getters

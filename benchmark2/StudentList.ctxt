@@ -1,14 +1,12 @@
 #BlueJ class context
 comment0.params=name\ stu
 comment0.target=void\ parseName(java.lang.String,\ Student)
-comment1.params=n
-comment1.target=StudentList(int)
+comment1.params=
+comment1.target=StudentList()
 comment10.params=str
 comment10.target=void\ deleteStudent(java.lang.String)
 comment11.params=
 comment11.target=void\ clearList()
-comment12.params=
-comment12.target=java.util.ArrayList\ getSL()
 comment2.params=stu
 comment2.target=void\ addStudent(Student)
 comment3.params=
@@ -25,4 +23,4 @@ comment8.params=stu\ str
 comment8.target=void\ editStuID(int,\ int)
 comment9.params=stu\ str
 comment9.target=void\ editStuGPA(double,\ double)
-numComments=13
+numComments=12

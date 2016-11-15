@@ -9,21 +9,38 @@ import java.util.ArrayList;
 public class StudentList
 {
     private ArrayList<Student> students;
-
-    public void parseName(String name, Student stu){
-        int index1 = name.indexOf(",");
-        int index2 = name.substring(index1+2).indexOf(" ");
-        stu.setFirst(name.substring(0,index1));
-        stu.setMiddle(name.substring(index1+2,index2));
-        stu.setLast(name.substring(index2+1));
+    //1-First Middle Last
+    //2-First Last
+    //3-Last, First Middle
+    //4-Last, First
+    public void parseName(String name, Student stu){ //BM2
+        if(name.indexOf(",")>=0){//if theres a comma 3/4
+            stu.setLast(name.substring(0,name.indexOf(",")));
+            String n = name.substring(name.indexOf(",")+2);
+            if(name.indexOf(" ")!= name.lastIndexOf(" ")){ //if theres a second space 3
+                stu.setFirst(name.substring(name.indexOf(" ")+1,name.lastIndexOf(" ")));
+                stu.setMiddle(name.substring(name.lastIndexOf(" ")+1));
+            } else{ //4
+                stu.setFirst(name.substring(name.indexOf(" ")+1));
+            }
+        }
+        else{ //1/2
+            stu.setFirst(name.substring(0,name.indexOf(" ")));
+            if(name.indexOf(" ")!= name.lastIndexOf(" ")){ //if theres a second space 1
+                stu.setMiddle(name.substring(name.indexOf(" ")+1,name.lastIndexOf(" ")));
+                stu.setLast(name.substring(name.lastIndexOf(" ")+1));
+            } else{ //2
+                stu.setLast(name.substring(name.indexOf(" ")+1));
+            }
+        }
     }
-    
-    public StudentList(int n){
+
+    public StudentList(){
         students = new ArrayList<Student>();
     }
 
     public void addStudent(Student stu){
-        //use parsename
+        parseName(stu.getName(),stu);
         students.add(stu);
     }
 
@@ -34,7 +51,7 @@ public class StudentList
             System.out.println("GPA: "+students.get(i).getGPA());
         }
     }
-    
+
     public void printStudent(String str){
         int index = -1;
         for(int i=0; i<students.size();i++){
@@ -42,11 +59,15 @@ public class StudentList
                 index = i;
             } 
         }
-        System.out.println("Name: " + students.get(index).getName());
-        System.out.println("ID #: " + students.get(index).getID());
-        System.out.println("GPA: " + students.get(index).getGPA());
+        if(index>=0){
+            System.out.println("Name: " + students.get(index).getName());
+            System.out.println("ID #: " + students.get(index).getID());
+            System.out.println("GPA: " + students.get(index).getGPA());
+        } else{
+            System.out.println("This student doesn't exist.");
+        }
     }
-    
+
     public void editStuFirst(String stu, String str){
         int index = -1;
         for(int i=0; i<students.size();i++){
@@ -56,7 +77,7 @@ public class StudentList
         }
         students.get(index).setFirst(str);
     }
-    
+
     public void editStuMiddle(String stu, String str){
         int index = -1;
         for(int i=0; i<students.size();i++){
@@ -66,7 +87,7 @@ public class StudentList
         }
         students.get(index).setMiddle(str);
     }
-    
+
     public void editStuLast(String stu, String str){
         int index = -1;
         for(int i=0; i<students.size();i++){
@@ -76,7 +97,7 @@ public class StudentList
         }
         students.get(index).setLast(str);
     }
-    
+
     public void editStuID(int stu, int str){
         int index = -1;
         for(int i=0; i<students.size();i++){
@@ -86,7 +107,7 @@ public class StudentList
         }
         students.get(index).setID(str);
     }
-    
+
     public void editStuGPA(double stu, double str){
         int index = -1;
         for(int i=0; i<students.size();i++){
@@ -108,12 +129,8 @@ public class StudentList
             students.remove(index);
         }
     }
-    
+
     public void clearList(){
         students.clear();
-    }
-
-    public ArrayList getSL(){
-        return students;
     }
 }
