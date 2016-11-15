@@ -34,7 +34,7 @@ public class ListRunner
                 System.out.println("What is the student's GPA?");
                 ansDub = input.nextDouble();
                 System.out.println("What is the student's name?");
-                ansStr = input.next();
+                ansStr = input.nextLine();
                 Student stu = new Student(ansInt,ansDub,ansStr);
                 sl.addStudent(stu);
             }

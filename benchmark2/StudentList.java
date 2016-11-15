@@ -16,7 +16,6 @@ public class StudentList
     public void parseName(String name, Student stu){ //BM2
         if(name.indexOf(",")>=0){//if theres a comma 3/4
             stu.setLast(name.substring(0,name.indexOf(",")));
-            String n = name.substring(name.indexOf(",")+2);
             if(name.indexOf(" ")!= name.lastIndexOf(" ")){ //if theres a second space 3
                 stu.setFirst(name.substring(name.indexOf(" ")+1,name.lastIndexOf(" ")));
                 stu.setMiddle(name.substring(name.lastIndexOf(" ")+1));
@@ -40,8 +39,8 @@ public class StudentList
     }
 
     public void addStudent(Student stu){
-        parseName(stu.getName(),stu);
         students.add(stu);
+        parseName(stu.getName(),stu);
     }
 
     public void printStuList(){
