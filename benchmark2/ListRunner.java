@@ -20,6 +20,7 @@ public class ListRunner
         Student student;
         int quit = 0;
         while(quit==0){
+            String clearBuffer = "/u001b"; //should clear buffer
             System.out.println("\nPlease select one of the following, or quit(q): ");
             System.out.println("1) Add Student\n" + 
             "2) Print Student List\n" + 
@@ -33,6 +34,7 @@ public class ListRunner
                 ansInt = input.nextInt();
                 System.out.println("What is the student's GPA?");
                 ansDub = input.nextDouble();
+                String n = input.nextLine();//clears buffer
                 System.out.println("What is the student's name?");
                 ansStr = input.nextLine();
                 Student stu = new Student(ansInt,ansDub,ansStr);
