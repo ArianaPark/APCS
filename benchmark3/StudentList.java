@@ -55,9 +55,12 @@ public class StudentList
     public int findStudent(String str){
         int index = -1;
         for(int i=0; i<students.size();i++){
-            if(students.get(i).getName() == str){
+            if(students.get(i).getName().equals(str)){
                 index = i;
             } 
+        }
+        if(index == -1){
+            System.out.println("Sorry, this student doesn't exist.");
         }
         return index;
     }
@@ -68,6 +71,9 @@ public class StudentList
             if(students.get(i).getID() == n){
                 index = i;
             } 
+        }
+        if(index == -1){
+            System.out.println("Sorry, this student doesn't exist.");
         }
         return index;
     }
