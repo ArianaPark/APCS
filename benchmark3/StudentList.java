@@ -54,14 +54,21 @@ public class StudentList
 
     public int findStudent(String str){
         int index = -1;
+        //make temporary student objec to parse name
+        Student temp = new Student(0,0,str);
+        parseName(str,temp);
+        //check for each word in name
         for(int i=0; i<students.size();i++){
-            if(students.get(i).getName().equals(str)){
+            if(students.get(i).getFirst().equals(temp.getFirst()) && 
+            students.get(i).getMiddle().equals(temp.getMiddle()) &&
+            students.get(i).getLast().equals(temp.getLast())){
                 index = i;
             } 
         }
         if(index == -1){
             System.out.println("Sorry, this student doesn't exist.");
         }
+        students.remove(temp);
         return index;
     }
     
