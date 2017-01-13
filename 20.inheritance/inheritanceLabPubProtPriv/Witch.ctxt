@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=name
+comment0.target=Witch(java.lang.String)
+comment1.params=name\ age
+comment1.target=Witch(java.lang.String,\ int)
+comment2.params=
+comment2.target=void\ showPrivate()
+comment3.params=
+comment3.target=void\ showProtected()
+numComments=4
