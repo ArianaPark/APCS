@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.params=w
+comment0.target=Word(java.lang.String)
+comment1.params=obj
+comment1.target=int\ compareTo(java.lang.Object)
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3
