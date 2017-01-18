@@ -1,0 +1,56 @@
+Class documentation
+<---- javadoc command: ---->
+C:\Program Files (x86)\Java\jdk1.8.0_101\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+1.8
+-classpath
+C:\Program Files (x86)\BlueJ\lib\bluejcore.jar;C:\Program Files (x86)\BlueJ\lib\junit-4.8.2.jar;H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2
+-d
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+-docletpath
+C:\Program Files (x86)\BlueJ\lib\bjdoclet.jar
+-doclet
+bluej.doclet.doclets.formats.html.HtmlDoclet
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java
+<---- end of javadoc command ---->
+Loading source file H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java...
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:53: error: <identifier> expected
+		    if(cards.get(i).
+		                    ^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:55: error: illegal start of statement
+	}
+	^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:61: error: illegal start of expression
+	public void shuffle() {
+	^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:61: error: illegal start of expression
+	public void shuffle() {
+	       ^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:61: error: ';' expected
+	public void shuffle() {
+	                   ^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:70: error: illegal start of expression
+	public Card deal() {
+	^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:70: error: ';' expected
+	public Card deal() {
+	                ^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:79: error: ';' expected
+	public String toString() {
+	                      ^
+H:\APCS\Projects\Project 4 - Elevens\Activity2  Starter Code\act2\Deck.java:108: error: reached end of file while parsing
+}
+ ^
+9 errors
