@@ -9,4 +9,6 @@ comment3.params=str
 comment3.target=void\ deleteStudent(java.lang.String)
 comment4.params=
 comment4.target=Student[]\ getSL()
-numComments=5
+comment5.params=a
+comment5.target=int\ compareTo(Student)
+numComments=6

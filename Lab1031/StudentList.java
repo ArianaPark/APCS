@@ -3,7 +3,7 @@
  *Ariana Park
  *10/28/16
  */
-public class StudentList
+public class StudentList 
 {
     private Student[] students;
 
@@ -55,4 +55,6 @@ public class StudentList
     public Student[] getSL(){
         return students;
     }
+    
+    
 }

@@ -3,7 +3,7 @@
  *Ariana Park
  *10/28/16
  */
-public class Student
+public class Student implements Comparable<Student>
 {
     private int stuID;
     private double stuGPA;
@@ -33,5 +33,26 @@ public class Student
     }
     public void setName(String n){
         stuName = n;
+    }
+    
+    public int compareTo(Student a){
+        Student b = this;
+        int aid = a.getID();
+        int bid = b.getID();
+        if(aid<bid){
+            return -1;
+        } else if(aid==bid){
+            return 0;
+        } else{
+            return 1;
+        }
+    }
+    
+    public Student[] insertSort(){
+        
+    }
+    
+    public Student[] selectSort(){
+        
     }
 }
