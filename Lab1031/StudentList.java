@@ -56,5 +56,42 @@ public class StudentList
         return students;
     }
     
+    public Student[] insertSort(Student[] list){
+        Student temp;
+        for(int i=0;i<list.length;i++){
+            for(int j = i;j>0;j--){
+                if(list[j].getID()<list[j-1].getID()){
+                    temp=list[j];
+                    list[j] = list[j-1];
+                    list[j-1]=temp;
+                }
+            }
+        }
+        return list;
+    }
     
+    public Student[] selectSort(Student[] list){
+        for(int i = 0;i<list.length-1;i++){
+            int index = i;
+            for(int j = i+1;j<list.length;j++){
+                if(list[j].getID()<list[index].getID()) index = j;
+            }
+            Student smallerID = list[index];
+            list[index] = list[i];
+            list[i] = smallerID;
+        }
+        return list;
+    }
+    
+    public boolean binarySearch(int key, Student[] list){
+        int low = 0;
+        int high = list.length-1;
+        while(low<=high){
+            int mid = (low+high)/2;
+            if(list[mid].getID()==key) return true;
+            if(list[mid].getID()<key) low = mid+1;
+            if(list[mid].getID()>key) high = mid-1;
+        }
+        return false;
+    }
 }

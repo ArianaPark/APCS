@@ -19,7 +19,7 @@ public class ListRunner
         int quit = 0;
         while(quit==0){
             System.out.println("\nPlease select one of the following, or quit(q): ");
-            System.out.println("1) Add Student\n2) Print Student List\n3) Delete Student");
+            System.out.println("1) Add Student\n2) Print Student List\n3) Delete Student\n4) Insert Sort\n5) Select Sort\n6) Binary Search");
             ansStr = input.next();
             if(ansStr.equals("1")){
                 System.out.println("What is the student's ID?");
@@ -38,6 +38,17 @@ public class ListRunner
                 System.out.println("What student do you want to delete? (name)");
                 ansStr = input.next();
                 sl.deleteStudent(ansStr);
+            }
+            else if(ansStr.equals("3")){
+                sl.insertSort(sl.getSL());
+            }
+            else if(ansStr.equals("4")){
+                sl.selectSort(sl.getSL());
+            }
+            else if(ansStr.equals("6")){
+                System.out.println("What is the student's ID?");
+                ansInt = input.nextInt();
+                System.out.println(sl.binarySearch(ansInt,sl.getSL()));
             }
             else if(ansStr.equals("q")){
                 quit = -1;

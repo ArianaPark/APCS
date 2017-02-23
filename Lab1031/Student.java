@@ -48,11 +48,5 @@ public class Student implements Comparable<Student>
         }
     }
     
-    public Student[] insertSort(){
-        
-    }
     
-    public Student[] selectSort(){
-        
-    }
 }
